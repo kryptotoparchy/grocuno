@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Pantry Assistance - $500 Grocery Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --dark-navy: #1a1a2e;
+      --cream: #faf6f1;
+      --cream-dark: #f5efe8;
+      --coral: #e85a4f;
+      --coral-dark: #d64a3f;
+      --gold: #d4a853;
+      --text-light: #ffffff;
+      --text-dark: #1a1a2e;
+      --text-muted: #6b7280;
+      --yellow-bar: #f5d547;
+      --safe-top: env(safe-area-inset-top);
+      --safe-bottom: env(safe-area-inset-bottom);
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--dark-navy);
+      color: var(--text-light);
+      line-height: 1.5;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      padding-top: var(--safe-top);
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: var(--yellow-bar);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .live-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--dark-navy);
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--coral);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .updated {
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--dark-navy);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--dark-navy);
+      padding: 24px 16px 40px;
+    }
+
+    .brand-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--coral) 0%, #ff7b6b 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+    }
+
+    .free-badge {
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 5px 12px;
+      border-radius: 16px;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-light);
+    }
+
+    .quick-check {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .hero-title .amount {
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+
+    /* Steps Card */
+    .steps-card {
+      background: var(--cream);
+      margin: -20px 12px 0;
+      border-radius: 16px;
+      padding: 22px 18px 18px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .steps-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .steps-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--coral);
+      margin-bottom: 4px;
+    }
+
+    .steps-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 24px;
+      color: var(--text-dark);
+    }
+
+    .steps-count {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      background: var(--dark-navy);
+      color: var(--text-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .step-text {
+      font-size: 14px;
+      color: var(--text-dark);
+      font-weight: 500;
+      padding-top: 5px;
+    }
+
+    /* CTA Button */
+    .cta-btn {
+      display: flex;
+      width: 100%;
+      background: var(--coral);
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.2s, transform 0.1s;
+      touch-action: manipulation;
+      margin-bottom: 16px;
+    }
+
+    .cta-btn:hover {
+      background: var(--coral-dark);
+    }
+
+    .cta-btn:active {
+      transform: scale(0.98);
+    }
+
+    .cta-arrow {
+      width: 32px;
+      height: 32px;
+      background: rgba(0,0,0,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cta-arrow svg {
+      width: 14px;
+      height: 14px;
+      fill: white;
+    }
+
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 10px;
+      background: var(--cream-dark);
+      border-radius: 16px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .badge svg {
+      width: 12px;
+      height: 12px;
+      fill: var(--text-muted);
+    }
+
+    /* Info Section */
+    .info-section {
+      background: var(--cream);
+      margin: 12px 12px 0;
+      border-radius: 12px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .info-title {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .info-title svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--coral);
+    }
+
+    .info-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Disclaimer */
+    .disclaimer {
+      padding: 20px 16px 80px;
+      text-align: center;
+    }
+
+    .disclaimer p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="live-badge">
+        <span class="live-dot"></span>
+        Live Eligibility Check
+      </div>
+      <div class="updated">Updated Today</div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="brand-header">
+        <div class="brand">
+          <div class="brand-icon">✦</div>
+          <div class="brand-name">PANTRY ASSISTANCE</div>
+        </div>
+        <div class="free-badge">Quick Check</div>
+      </div>
+
+      <div class="quick-check">A Quick Support Check</div>
+
+      <h1 class="hero-title">
+        Check if you qualify for up to <span class="amount">$500</span> in grocery support.
+      </h1>
+
+      <p class="hero-subtitle">
+        Answer a few simple questions to see if your household may be eligible for available grocery assistance.
+      </p>
+    </div>
+
+    <!-- Steps Card -->
+    <div class="steps-card">
+      <div class="steps-header">
+        <div>
+          <div class="steps-label">Your 3-Step Path</div>
+          <div class="steps-title">Let's find out.</div>
+        </div>
+        <div class="steps-count">01 — 03</div>
+      </div>
+
+      <div class="steps-list">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-text">Share a few basics about your household</div>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-text">Complete 3-5 required offers</div>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-text">Get your personalized support result</div>
+        </div>
+      </div>
+
+      <a href="#" class="cta-btn">
+        Check yours now.
+        <span class="cta-arrow">
+          <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </span>
+      </a>
+
+      <div class="trust-badges">
+        <div class="badge">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Private & secure
+        </div>
+        <div class="badge">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          U.S. residents
+        </div>
+        <div class="badge">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          About 60 seconds
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+      <div class="info-title">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        No purchase needed.
+      </div>
+      <p class="info-text">
+        This eligibility check takes less than a minute. Results vary by household and location.
+      </p>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <p>For U.S. residents 21+. This page is not affiliated with or endorsed by any grocery retailer, government agency, or benefits program.</p>
+      <p>By continuing, you agree to review the offer details and eligibility terms.</p>
+    </div>
+  </div>
+</body>
+</html>
