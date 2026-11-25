@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Pantry Assistance - $500 Grocery Support</title>
+  <title>Get Up To $500 Tractor Supply Discount Code</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -18,424 +18,499 @@
     }
 
     :root {
-      --dark-navy: #1a1a2e;
-      --cream: #faf6f1;
-      --cream-dark: #f5efe8;
-      --coral: #e85a4f;
-      --coral-dark: #d64a3f;
-      --gold: #d4a853;
-      --text-light: #ffffff;
-      --text-dark: #1a1a2e;
-      --text-muted: #6b7280;
-      --yellow-bar: #f5d547;
+      --tsc-red: #e31837;
+      --tsc-red-dark: #c41430;
+      --tsc-green: #006838;
+      --tsc-green-light: #e8f5e9;
+      --tsc-black: #1a1a1a;
+      --white: #ffffff;
+      --gray-100: #f3f4f6;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-900: #111827;
       --safe-top: env(safe-area-inset-top);
       --safe-bottom: env(safe-area-inset-bottom);
     }
 
     body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--dark-navy);
-      color: var(--text-light);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--white);
+      color: var(--gray-900);
       line-height: 1.5;
       min-height: 100vh;
       min-height: -webkit-fill-available;
       padding-top: var(--safe-top);
+      padding-bottom: var(--safe-bottom);
     }
 
     .container {
       max-width: 480px;
       margin: 0 auto;
+      padding: 16px 16px 80px;
     }
 
-    .top-bar {
-      background: var(--yellow-bar);
-      padding: 8px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .live-badge {
+    /* Social Proof - AT TOP */
+    .social-proof {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 10px;
+      padding: 12px 14px;
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 9px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--dark-navy);
+      gap: 10px;
+      margin-bottom: 16px;
+      animation: fadeIn 0.4s ease-out;
     }
 
-    .live-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--coral);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-
-    .updated {
-      font-size: 9px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--dark-navy);
-    }
-
-    .hero {
-      background: var(--dark-navy);
-      padding: 16px 16px 32px;
-    }
-
-    .brand-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .brand-icon {
+    .proof-icon {
       width: 32px;
       height: 32px;
-      background: linear-gradient(135deg, var(--coral) 0%, #ff7b6b 100%);
+      background: var(--tsc-green-light);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      flex-shrink: 0;
     }
 
-    .brand-name {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-light);
-      letter-spacing: 0.5px;
+    .proof-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--tsc-green);
     }
 
-    .free-badge {
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 4px 10px;
-      border-radius: 14px;
-      font-size: 9px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-light);
-    }
-
-    .quick-check {
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    .hero-title {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .hero-title .amount {
-      color: var(--gold);
-    }
-
-    .hero-subtitle {
-      font-size: 13px;
-      color: rgba(255,255,255,0.7);
+    .proof-text {
+      font-size: 12px;
+      color: var(--gray-600);
       line-height: 1.4;
     }
 
-    .steps-card {
-      background: var(--cream);
-      margin: -16px 12px 0;
-      border-radius: 14px;
-      padding: 18px 16px 16px;
-      position: relative;
-      z-index: 10;
+    .proof-text strong {
+      color: var(--gray-900);
     }
 
-    .steps-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 12px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-
-    .steps-label {
-      font-size: 9px;
+    .proof-text .highlight {
+      color: var(--tsc-red);
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--coral);
-      margin-bottom: 2px;
     }
 
-    .steps-title {
-      font-family: 'DM Serif Display', Georgia, serif;
+    /* Brand Logo */
+    .brand-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .logo-bubble {
+      background: var(--tsc-red);
+      padding: 18px 28px;
+      border-radius: 12px 12px 12px 0;
+      text-align: center;
+    }
+
+    .logo-text {
       font-size: 20px;
-      color: var(--text-dark);
+      font-weight: 700;
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .steps-count {
-      font-size: 12px;
-      color: var(--text-muted);
+    .logo-subtext {
+      font-size: 11px;
+      color: rgba(255,255,255,0.9);
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 1px;
+      margin-top: 2px;
+      text-transform: uppercase;
     }
 
-    .steps-list {
+    /* Headline */
+    .headline {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .headline h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.3px;
+      margin-bottom: 8px;
+    }
+
+    .headline p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 16px;
+    }
+
+    .steps {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-bottom: 14px;
+      gap: 12px;
     }
 
     .step {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
+      gap: 14px;
+      padding: 16px;
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 12px;
     }
 
-    .step-number {
-      width: 28px;
-      height: 28px;
-      background: var(--dark-navy);
-      color: var(--text-light);
-      border-radius: 50%;
+    .step-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--tsc-green-light);
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
-      font-weight: 600;
       flex-shrink: 0;
     }
 
-    .step-text {
-      font-size: 13px;
-      color: var(--text-dark);
-      font-weight: 500;
-      padding-top: 4px;
+    .step-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--tsc-green);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
-    .cta-btn {
-      display: flex;
-      width: 100%;
-      background: var(--coral);
-      color: white;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 14px;
+    .step-content {
+      flex: 1;
+    }
+
+    .step-label {
+      font-size: 10px;
       font-weight: 600;
-      padding: 12px 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-400);
+      margin-bottom: 2px;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 2px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    /* CTA Button - AFTER STEP 3 */
+    .cta-btn {
+      display: block;
+      width: 100%;
+      background: var(--tsc-red);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 24px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
       text-decoration: none;
-      align-items: center;
-      justify-content: space-between;
+      text-align: center;
       transition: background 0.2s, transform 0.1s;
+      -webkit-touch-callout: none;
       touch-action: manipulation;
-      margin-bottom: 14px;
+      margin-top: 20px;
+      margin-bottom: 16px;
     }
 
     .cta-btn:hover {
-      background: var(--coral-dark);
+      background: var(--tsc-red-dark);
     }
 
     .cta-btn:active {
       transform: scale(0.98);
     }
 
-    .cta-arrow {
-      width: 28px;
-      height: 28px;
-      background: rgba(0,0,0,0.15);
-      border-radius: 50%;
+    /* Disclaimer */
+    .disclaimer-text {
+      font-size: 12px;
+      color: var(--gray-500);
+      line-height: 1.5;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    /* Trustpilot */
+    .trustpilot {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .stars {
       display: flex;
-      align-items: center;
       justify-content: center;
-    }
-
-    .cta-arrow svg {
-      width: 12px;
-      height: 12px;
-      fill: white;
-    }
-
-    .trust-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      justify-content: center;
-    }
-
-    .badge {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 5px 8px;
-      background: var(--cream-dark);
-      border-radius: 14px;
-      font-size: 10px;
-      font-weight: 500;
-      color: var(--text-dark);
-    }
-
-    .badge svg {
-      width: 10px;
-      height: 10px;
-      fill: var(--text-muted);
-    }
-
-    .info-section {
-      background: var(--cream);
-      margin: 10px 12px 0;
-      border-radius: 10px;
-      padding: 14px 16px;
-      border-left: 3px solid var(--gold);
-    }
-
-    .info-title {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-dark);
+      gap: 2px;
       margin-bottom: 4px;
     }
 
-    .info-title svg {
-      width: 14px;
-      height: 14px;
-      fill: var(--coral);
+    .star {
+      width: 22px;
+      height: 22px;
+      fill: var(--tsc-green);
     }
 
-    .info-text {
-      font-size: 12px;
-      color: var(--text-muted);
-      line-height: 1.4;
+    .rating-text {
+      font-size: 13px;
+      color: var(--gray-600);
     }
 
-    .disclaimer {
-      padding: 16px 16px 60px;
+    .rating-text strong {
+      color: var(--gray-900);
+    }
+
+    /* FAQ */
+    .faq {
+      margin-top: 24px;
+    }
+
+    .faq-title {
       text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 14px;
     }
 
-    .disclaimer p {
-      font-size: 10px;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.5;
-      margin-bottom: 8px;
+    .faq-item {
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 14px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--gray-900);
+      gap: 12px;
+      -webkit-touch-callout: none;
+      touch-action: manipulation;
+    }
+
+    .faq-question svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--gray-400);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-question svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 0 14px;
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="top-bar">
-      <div class="live-badge">
-        <span class="live-dot"></span>
-        Live Eligibility Check
+    <!-- Social Proof - AT TOP -->
+    <div class="social-proof" id="socialProof">
+      <div class="proof-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6M12 3v12M8 7l4-4 4 4"/></svg>
       </div>
-      <div class="updated">Updated Today</div>
+      <div class="proof-text">
+        <strong>Mike</strong> from <strong>Texas</strong> just got a <span class="highlight">$500 Tractor Supply Discount Code</span>.
+      </div>
     </div>
 
-    <div class="hero">
-      <div class="brand-header">
-        <div class="brand">
-          <div class="brand-icon">✦</div>
-          <div class="brand-name">PANTRY ASSISTANCE</div>
-        </div>
-        <div class="free-badge">Quick Check</div>
+    <!-- Brand Logo -->
+    <div class="brand-logo">
+      <div class="logo-bubble">
+        <div class="logo-text">Tractor Supply</div>
+        <div class="logo-subtext">Company</div>
       </div>
-
-      <div class="quick-check">A Quick Support Check</div>
-
-      <h1 class="hero-title">
-        Check if you qualify for up to <span class="amount">$500</span> in grocery support.
-      </h1>
-
-      <p class="hero-subtitle">
-        Answer a few simple questions to see if your household may be eligible for available grocery assistance.
-      </p>
     </div>
 
-    <div class="steps-card">
-      <div class="steps-header">
-        <div>
-          <div class="steps-label">Your 3-Step Path</div>
-          <div class="steps-title">Let's find out.</div>
-        </div>
-        <div class="steps-count">01 — 03</div>
-      </div>
+    <!-- Headline -->
+    <div class="headline">
+      <h1>Get Up To $500 Tractor Supply Discount Code</h1>
+      <p>Shop quality farm supplies, pet products, outdoor gear, and everything for life out here.</p>
+    </div>
 
-      <div class="steps-list">
+    <!-- How It Works -->
+    <div class="how-it-works">
+      <h2 class="section-title">How It Works</h2>
+
+      <div class="steps">
         <div class="step">
-          <div class="step-number">01</div>
-          <div class="step-text">Share a few basics about your household</div>
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>
+          </div>
+          <div class="step-content">
+            <div class="step-label">Step 1</div>
+            <div class="step-title">Click the Button Below</div>
+            <div class="step-desc">Start by clicking the claim button to begin.</div>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-number">02</div>
-          <div class="step-text">Complete 3-5 required offers</div>
-        </div>
-        <div class="step">
-          <div class="step-number">03</div>
-          <div class="step-text">Get your personalized support result</div>
-        </div>
-      </div>
 
-      <a href="https://linkthem.net/aff_c?offer_id=4837&aff_id=164706" class="cta-btn">
-        Check yours now.
-        <span class="cta-arrow">
-          <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-        </span>
-      </a>
+        <div class="step">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="step-content">
+            <div class="step-label">Step 2</div>
+            <div class="step-title">Complete 3-5 Required Offers</div>
+            <div class="step-desc">Finish the required deals to unlock your reward.</div>
+          </div>
+        </div>
 
-      <div class="trust-badges">
-        <div class="badge">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Private & secure
-        </div>
-        <div class="badge">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          U.S. residents
-        </div>
-        <div class="badge">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          About 60 seconds
+        <div class="step">
+          <div class="step-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6M12 3v12M8 7l4-4 4 4"/></svg>
+          </div>
+          <div class="step-content">
+            <div class="step-label">Step 3</div>
+            <div class="step-title">Get Your Tractor Supply Discount Code</div>
+            <div class="step-desc">Once completed, receive your Tractor Supply discount code.</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="info-section">
-      <div class="info-title">
-        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        No purchase needed.
+    <!-- CTA Button - AFTER STEP 3 -->
+    <a href="https://linkthem.net/?offer_id=5487&aff_id=164706" class="cta-btn">
+      Claim Now
+    </a>
+
+    <!-- Disclaimer -->
+    <p class="disclaimer-text">To qualify for your Tractor Supply discount code, complete the required deal from start to finish to unlock up to $500 savings. Once successfully completed, you'll be eligible to claim your reward.</p>
+
+    <!-- Trustpilot -->
+    <div class="trustpilot">
+      <div class="stars">
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="star" style="fill: var(--gray-100);" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       </div>
-      <p class="info-text">
-        This eligibility check takes less than a minute. Results vary by household and location.
-      </p>
+      <div class="rating-text"><strong>4.5 / 5</strong> on ★ Trustpilot</div>
     </div>
 
-    <div class="disclaimer">
-      <p>For U.S. residents 21+. This page is not affiliated with or endorsed by any grocery retailer, government agency, or benefits program.</p>
-      <p>By continuing, you agree to review the offer details and eligibility terms.</p>
+    <!-- FAQ -->
+    <div class="faq">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+
+      <div class="faq-item open">
+        <button class="faq-question">
+          Does it only work for students?
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </button>
+        <div class="faq-answer">
+          No, it's available nationwide — anyone, anywhere can claim this offer.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How long does it take to receive my discount code?
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </button>
+        <div class="faq-answer">
+          After completing the required offers, you'll receive your discount code within 24-48 hours via email.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What kind of tasks do I need to complete?
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </button>
+        <div class="faq-answer">
+          Tasks include surveys, app downloads, or signing up for partner trials. Most take just a few minutes.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Can I claim the reward multiple times?
+          <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </button>
+        <div class="faq-answer">
+          Each person can claim one discount code per household. Multiple entries may result in disqualification.
+        </div>
+      </div>
     </div>
   </div>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        button.parentElement.classList.toggle('open');
+      });
+    });
+
+    const names = ['Mike', 'John', 'Sarah', 'David', 'Emily', 'James', 'Jennifer', 'Robert', 'Jessica', 'William'];
+    const locations = ['Texas', 'Oklahoma', 'Tennessee', 'Georgia', 'Missouri', 'Kentucky', 'Alabama', 'Arkansas', 'North Carolina', 'Ohio'];
+
+    function updateSocialProof() {
+      const name = names[Math.floor(Math.random() * names.length)];
+      const location = locations[Math.floor(Math.random() * locations.length)];
+      const proofText = document.querySelector('.proof-text');
+      const socialProof = document.getElementById('socialProof');
+
+      socialProof.style.animation = 'none';
+      socialProof.offsetHeight;
+      socialProof.style.animation = 'fadeIn 0.4s ease-out';
+
+      proofText.innerHTML = `<strong>${name}</strong> from <strong>${location}</strong> just got a <span class="highlight">$500 Tractor Supply Discount Code</span>.`;
+    }
+
+    setInterval(updateSocialProof, 5000);
+  </script>
 </body>
 </html>
